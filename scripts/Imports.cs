@@ -17,3 +17,6 @@ global using HKTool;
 
 global using Modding;
 global using MReflectionHelper = Modding.ReflectionHelper;
+
+global using HKGraphics.Materials;
+global using HKGraphics.Effects;

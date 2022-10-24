@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 2533558621
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: scene
+      Dependencies: {}
+    Info_1:
+      Name: hkgraphics
+      Dependencies: {}

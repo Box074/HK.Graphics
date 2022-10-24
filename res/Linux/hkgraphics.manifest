@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1607304470
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ee3a8be80e04d06a6d95cdcd32bf3e70
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 68c985bf88fecc38b460cdb825182138
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Assets/Shaders/TextureMaskApplyShader.shader
+- Assets/Assets/Shaders/ColorAddShader.shader
+- Assets/Assets/Shaders/ColorScaleShader.shader
+- Assets/Assets/Shaders/NoLightShader.shader
+- Assets/Assets/Shaders/TextureMaskMakerShader.shader
+Dependencies: []

@@ -5,7 +5,14 @@
     "libraryDir": "./library",
     "csCompileInfo": true,
     "enableNullableCheck": true,
-    "resources": {},
+    "resources": {
+        "./res/Windows/hkgraphics": "ab.main.win",
+        "./res/Windows/scene": "ab.empty.scene.win",
+        "./res/Linux/hkgraphics": "ab.main.linux",
+        "./res/Linux/scene": "ab.empty.scene.linux",
+        "./res/MacOs/hkgraphics": "ab.main.mac",
+        "./res/MacOs/scene": "ab.empty.scene.mac"
+    },
     "reference": [],
     "dependencies": [
         {
@@ -35,7 +42,35 @@
     "hktool": {
         "modifyIL": true,
         "inlineHook": true,
-        "referenceLib": true
+        "referenceLib": true,
+        "modRes": {
+            "ab.main.win": {
+                "name": "AB_MAIN_WIN",
+                "type": "ab"
+            },
+            "ab.empty.scene.win": {
+                "name": "AB_EMPTY_SCENE_WIN",
+                "type": "ab"
+            },
+            "ab.main.linux": {
+                "name": "AB_MAIN_LINUX",
+                "type": "ab"
+            },
+            "ab.empty.scene.linux": {
+                "name": "AB_EMPTY_SCENE_LINUX",
+                "type": "ab"
+            },
+            "ab.main.mac": {
+                "name": "AB_MAIN_MAC",
+                "type": "ab"
+            },
+            "ab.empty.scene.mac": {
+                "name": "AB_EMPTY_SCENE_MAC",
+                "type": "ab"
+            }
+        },
+        "externRes": true,
+        "compressResources": true
     },
     "csproj": {
         "itemGroup": {

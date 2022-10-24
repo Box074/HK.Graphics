@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 3222097638
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c9e952de87694a5a98fbd5314f6a87cc
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: bae8dec5def084c7967bd2c677b3c408
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Assets/Scenes/HKGraphicsEmptyScene.unity
+Dependencies: []
