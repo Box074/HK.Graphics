@@ -1,7 +1,7 @@
 
 namespace HKGraphics.Effects;
 
-public class ColorScaleEffect : CameraEffectBase<ColorScaleEffect.ColorScaleEffectBeh>, IColorEffect
+public class ColorScaleEffect : CameraEffectBase<DefaultEffectBehaviour>, IColorEffect
 {
     internal ColorScale _scale = new();
     EffectMaterialBase IColorEffect.EffectMaterial => _scale;
@@ -10,11 +10,13 @@ public class ColorScaleEffect : CameraEffectBase<ColorScaleEffect.ColorScaleEffe
         get => _scale.Scale;
         set => _scale.Scale = value;
     }
-    public class ColorScaleEffectBeh : ColorScaleEffect.EffectBehaviour<ColorScaleEffect>
+    protected override void OnDestroy()
     {
-        protected override void OnRenderImage(RenderTexture src, RenderTexture dest)
-        {
-            Graphics.Blit(src, dest, Controller._scale);
-        }
+        base.OnDestroy();
+        _scale.Dispose();
+    }
+    protected override void OnInitEffectBehaviour(DefaultEffectBehaviour behaviour)
+    {
+        behaviour.Material = _scale;
     }
 }

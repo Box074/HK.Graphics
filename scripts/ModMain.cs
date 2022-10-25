@@ -29,21 +29,8 @@ class GraphicsLibrary : ModBase<GraphicsLibrary>
     {
         if(DebugManager.IsDebug(this)) Test();
     }
-    public static Texture2D? tatlas;
-    public static Texture2D? otex;
-    public static Texture2D? tex2;
-    public static TextureMask? mask;
     public void Test()
     {
-        tatlas = Resources.FindObjectsOfTypeAll<Texture2D>().First(x => x.name == "sactx-0-2048x2048-DXT5-UI-923ee0f1");
-        Stopwatch watch = new();
-        watch.Start();
-        otex = tatlas.Cut(new(512,512, 512, 1024), TextureFormat.RGBA32);
-        mask = new TextureMask(true, new(512, 1024), new TextureMask.VectorGroup(new(10, 20), new(256, 128), new(256, 256)));
-        tex2 = otex.CreateReadable(material: mask);
-        watch.Stop();
-        Log($"Cut: {watch.ElapsedMilliseconds}ms");
-
         bool nextA = false;
         bool f = true;
         ModHooks.HeroUpdateHook += () =>
@@ -56,7 +43,7 @@ class GraphicsLibrary : ModBase<GraphicsLibrary>
             {
                 nextA = !nextA;
                 f = false;
-                var cor = cae.Lerp(nextA ? new(0f,0f,0f,1) : new(-1f,-1f,-1f,1), nextA ? 0.35f : 4f);
+                var cor = cae.Lerp(new(UnityEngine.Random.value * 2 - 1,UnityEngine.Random.value * 2 - 1,UnityEngine.Random.value * 2 - 1), 1.5f);
                 cor.onFinished += _ =>
                 {
                     f = true;

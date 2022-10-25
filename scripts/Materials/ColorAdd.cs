@@ -16,6 +16,7 @@ public class ColorAdd : EffectMaterialBase
     private Material? material = null;
     public override void Dispose()
     {
+        GC.SuppressFinalize(this);
         if(DontDestroy) return;
         if (material != null)
         {

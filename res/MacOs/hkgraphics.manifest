@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2223932940
+CRC: 625078252
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 57dc910e56e151e4faf04489654f1ee2
+    Hash: d3b239dbb4bc62cd5c7ff8e78f56337e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 68c985bf88fecc38b460cdb825182138
@@ -16,6 +16,7 @@ Assets:
 - Assets/Assets/Shaders/TextureMaskApplyShader.shader
 - Assets/Assets/Shaders/ColorAddShader.shader
 - Assets/Assets/Shaders/ColorScaleShader.shader
+- Assets/Assets/Shaders/MonochromeShader.shader
 - Assets/Assets/Shaders/NoLightShader.shader
 - Assets/Assets/Shaders/TextureMaskMakerShader.shader
 Dependencies: []
