@@ -14,9 +14,11 @@ global using Unity.Collections.LowLevel.Unsafe;
 global using UnityEngine.LowLevel;
 
 global using HKTool;
+global using HKTool.Utils;
+global using HKTool.Data;
 
 global using Modding;
 global using MReflectionHelper = Modding.ReflectionHelper;
 
-global using HKGraphics.Materials;
 global using HKGraphics.Effects;
+global using HKGraphics.CameraEffects;

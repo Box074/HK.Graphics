@@ -1,5 +1,5 @@
 
-namespace HKGraphics.Materials;
+namespace HKGraphics.Effects;
 
 public class Monochrome : EffectMaterialBase
 {

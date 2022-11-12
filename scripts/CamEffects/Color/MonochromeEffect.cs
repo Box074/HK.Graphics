@@ -1,5 +1,5 @@
 
-namespace HKGraphics.Effects;
+namespace HKGraphics.CameraEffects;
 
 public class MonochromeEffect : CameraEffectBase<DefaultEffectBehaviour>, IColorEffect
 {

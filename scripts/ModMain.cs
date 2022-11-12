@@ -31,25 +31,49 @@ class GraphicsLibrary : ModBase<GraphicsLibrary>
     }
     public void Test()
     {
-        bool nextA = false;
-        bool f = true;
+        wm.points = new()
+        {
+            new(0, 1),
+            new(1, 2),
+            new(2, 3),
+            new(3, 2),
+            new(4, 1)
+        };
+        wm.uv = new()
+        {
+            new(0, 1),
+            new(0, 1),
+            new(0, 1),
+            new(0, 1),
+            new(0, 1),
+            new(0, 1),
+            new(0, 1),
+            new(0, 1),
+            new(0, 1)
+        };
+        wm.NI = 50;
+        wm.Update();
+        /*wm.AddVert(new MeshVertex(new Vector2(0, 0), new Vector2(0, 0)));
+        wm.AddVert(new MeshVertex(new Vector2(1, 2), new Vector2(1, 1)));
+        wm.AddVert(new MeshVertex(new Vector2(2, 3), new Vector2(1, 1)));
+        wm.AddVert(new MeshVertex(new Vector2(4, 2), new Vector2(1, 1)));
+        wm.AddVert(new MeshVertex(new Vector2(5, 5), new Vector2(1, 1)));
+        wm.AddVert(new MeshVertex(new Vector2(6, 0), new Vector2(1, 1)));
+        wm.Update();/*/
+        mat.mainTexture = Texture2D.whiteTexture;
+
         ModHooks.HeroUpdateHook += () =>
         {
-            if(cae == null)
+            if(testMesh == null)
             {
-                cae = HeroController.instance.gameObject.AddComponent<ColorAddEffect>();
+                testMesh = new();
+                testMesh.AddComponent<MeshRenderer>().material = mat;
+                testMesh.AddComponent<MeshFilter>().sharedMesh = wm;
             }
-            if(f)
-            {
-                nextA = !nextA;
-                f = false;
-                var cor = cae.Lerp(new(UnityEngine.Random.value * 2 - 1,UnityEngine.Random.value * 2 - 1,UnityEngine.Random.value * 2 - 1), 1.5f);
-                cor.onFinished += _ =>
-                {
-                    f = true;
-                };
-            }
+            testMesh.transform.position = HeroController.instance.transform.position;
         };
     }
-    private static ColorAddEffect? cae;
+    private static Material mat = new(Shader.Find("Diffuse"));
+    private static WaveMesh wm = new();
+    private static GameObject testMesh;
 }
