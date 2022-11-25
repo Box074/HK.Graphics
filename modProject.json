@@ -1,6 +1,6 @@
 {
     "modName": "HKGraphics",
-    "modVersion": "0.0.1.0",
+    "modVersion": "0.1.1.0",
     "codeDir": "./scripts",
     "libraryDir": "./library",
     "csCompileInfo": true,
