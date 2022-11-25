@@ -1,7 +1,11 @@
 
 namespace HKGraphics;
 
-public record struct MeshVertex(Vector2 position, Vector2 uv);
+public record struct MeshVertex(Vector2 position, Vector2 uv)
+{
+    public Vector2 position = position;
+    public Vector2 uv = uv;
+}
 
 [Flags]
 public enum PointDirection

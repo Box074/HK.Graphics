@@ -1,9 +1,9 @@
 
 namespace HKGraphics;
 
-class GraphicsLibrary : ModBase<GraphicsLibrary>
+public class GraphicsLibrary : ModBase<GraphicsLibrary>
 {
-    
+    public static bool disabledWaveSM = false;
     public static Dictionary<string, Shader> shaders = new();
     public static readonly AssetBundle empty_scene = Application.platform switch {
         RuntimePlatform.WindowsPlayer => ModRes.AB_EMPTY_SCENE_WIN,
@@ -27,29 +27,17 @@ class GraphicsLibrary : ModBase<GraphicsLibrary>
     }
     public override void Initialize()
     {
-        if(DebugManager.IsDebug(this)) Test();
+        //if(DebugManager.IsDebug(this)) Test();
     }
     public void Test()
     {
         wm.points = new()
         {
-            new(0, 1),
-            new(1, 2),
-            new(2, 3),
-            new(3, 2),
-            new(4, 1)
-        };
-        wm.uv = new()
-        {
-            new(0, 1),
-            new(0, 1),
-            new(0, 1),
-            new(0, 1),
-            new(0, 1),
-            new(0, 1),
-            new(0, 1),
-            new(0, 1),
-            new(0, 1)
+            new(new(0, 1), Vector2.up),
+            new(new(1, 2), Vector2.up),
+            new(new(2, 3), Vector2.up),
+            new(new(3, 2), Vector2.up),
+            new(new(4, 1), Vector2.up)
         };
         wm.NI = 50;
         wm.Update();
@@ -75,5 +63,5 @@ class GraphicsLibrary : ModBase<GraphicsLibrary>
     }
     private static Material mat = new(Shader.Find("Diffuse"));
     private static WaveMesh wm = new();
-    private static GameObject testMesh;
+    private static GameObject testMesh = null!;
 }

@@ -16,6 +16,10 @@ global using UnityEngine.LowLevel;
 global using HKTool;
 global using HKTool.Utils;
 global using HKTool.Data;
+global using HKTool.Reflection;
+global using HKTool.DebugTools;
+global using HKDebug.Menu;
+global using HKDebug;
 
 global using Modding;
 global using MReflectionHelper = Modding.ReflectionHelper;

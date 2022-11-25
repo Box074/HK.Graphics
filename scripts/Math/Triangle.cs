@@ -1,7 +1,12 @@
 
 namespace HKGraphics;
 
-public record struct MeshTriangle(MeshVertex a, MeshVertex b, MeshVertex c);
+public record struct MeshTriangle(MeshVertex a, MeshVertex b, MeshVertex c)
+{
+    public MeshVertex a = a;
+    public MeshVertex b = b;
+    public MeshVertex c = c;
+}
 
 public static class TriangleUtils
 {
